@@ -1,0 +1,169 @@
+section.visaul:hover {
+}
+
+.slide-cover {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  & ul {
+    display: flex;
+    width: 300vw;
+    height: 550px;
+    
+    & li {
+      position: relative;
+      width: 100%;
+      animation: slide 9s infinite;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      & .info-area {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 50px 250px;
+
+        & .tag {
+          padding: 5px 15px;
+          background: #e8a020;
+          width: fit-content;
+          border-radius: 5px;
+          color: #fff;
+          font-weight: 500;
+          font-size: 14px;
+        }
+
+        & .main-text {
+          font-size: 32px;
+          color: #fff;
+          font-family: 'Noto Serif KR', serif;
+          font-weight: 700;
+          line-height: 1.3;
+        }
+
+        & .sub-text {
+          font-size: 15px;
+          color: #fff;
+          opacity: .8;
+        }
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, #00000098, transparent);
+      }
+    }
+  }
+
+  &:hover {
+    & li {
+      animation-play-state: paused;
+    }
+
+    & .progress-bar {
+      animation-play-state: paused !important;
+    }
+  }
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: #e8a020;
+  animation: progress-bar 3s infinite;
+}
+
+@keyframes progress-bar {
+  from {
+    width: 0;
+  }
+
+  96.66% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  from, 30% {
+    transform: translateX(0);
+  }
+  33.33%, 63.66% {
+    transform: translateX(-100%);
+  }
+  66.66%, 96.66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.section-group {
+  display: flex;
+  gap: 50px;
+  padding: 0 250px;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  & .small-text {
+    font-size: 14px;
+    color: #00000073;
+  }
+
+  & .main-text {
+    font-size: 1.5rem;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    color: #1a3a5c;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #e8a020;
+    border-radius: 3px;
+  }
+}
+
+section.news, section.quick {
+  width: 100%;
+}
+
+section.program, section.schedule, section.recommand {
+  padding: 0 250px;
+}
+
+.section-vertical-group {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 0;
+}
