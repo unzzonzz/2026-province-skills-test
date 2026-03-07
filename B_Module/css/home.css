@@ -154,10 +154,19 @@ section.visaul:hover {
 }
 
 section.news, section.quick {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+section.news {
   width: 100%;
 }
 
 section.program, section.schedule, section.recommand {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   padding: 0 250px;
 }
 
@@ -166,4 +175,41 @@ section.program, section.schedule, section.recommand {
   flex-direction: column;
   gap: 50px;
   padding: 50px 0;
+}
+
+.quicks {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  gap: 10px;
+
+  & .quick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .25s;
+    box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.125);
+    
+    & p {
+      font-size: 14px;
+      color: #00000098;
+      transition: .25s;
+    }
+    
+    & i {
+      font-size: 32px;
+      color: #1a3a5c;
+      transition: .25s;
+    }
+    
+    &:hover {
+      background: #1a3a5c;
+
+      & p, & i { color: #fff; }
+    }
+  }
 }
