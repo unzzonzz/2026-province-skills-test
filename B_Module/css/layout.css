@@ -1,5 +1,14 @@
 * { margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; color: inherit; }
 
+.group.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.group.horiozntal {
+  display: flex;
+}
+
 header {
   display: flex;
   justify-content: space-between;

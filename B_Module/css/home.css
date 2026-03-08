@@ -161,6 +161,29 @@ section.news, section.quick {
 
 section.news {
   width: 100%;
+
+  & .news-container {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+
+    & tr {
+      border-bottom: 1px solid #dfdfdf;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    & td {
+      border-right: 1px solid #dfdfdf;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
 }
 
 section.program, section.schedule, section.recommand {
