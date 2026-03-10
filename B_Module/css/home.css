@@ -1,9 +1,10 @@
-section.visaul:hover {
+section.visaul {
+  width: 100%;
 }
 
 .slide-cover {
   position: relative;
-  width: 100vw;
+  width: calc(100vw - 15px);
   overflow: hidden;
 
   & ul {
@@ -399,6 +400,7 @@ section.program, section.schedule, section.recommand {
     & .current-date {
       font-size: 20px;
       font-family: serif;
+      font-weight: bold;
       color: #1a3a5c;
     }
 

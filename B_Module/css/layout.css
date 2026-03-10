@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; color: inherit; }
 
-h3 {
+h1, h2, h3 {
   font-family: serif;
 }
 
@@ -52,15 +52,55 @@ header .menu {
       position: relative;
       height: 100%;
 
-      &:hover > ul {
+      & input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      & input:focus ~ ul {
         opacity: 1 !important;
-        pointer-events: all !important;
+        height: fit-content;
+      }
+
+      & input:focus ~ a .icon::after {
+        rotate: 0deg !important;
+      }
+
+      &:not(:hover) input {
+        animation: kill-focus .001s forwards;
       }
 
       & > a {
         display: flex;
         align-items: center;
+        gap: 10px;
         height: 100%;
+
+        & .icon {
+          position: relative;
+          
+          &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 2px;
+            background: #fff;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 2px;
+            background: #fff;
+            rotate: 90deg;
+            transition: .25s;
+          }
+        }
       }
     }
   }
@@ -75,7 +115,7 @@ header .menu {
   width: 150px;
   opacity: 0;
   transition: .25s;
-  pointer-events: none;
+  height: 0;
   
   & li {
     padding: 10px 25px;
@@ -83,7 +123,7 @@ header .menu {
     border-bottom: 1px solid #dfdfdf;
     color: #00000076;
     font-size: 14px;
-    transition: .25s;
+    transition: color .25s;
     box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.125);
 
     &:hover {
@@ -98,9 +138,10 @@ header .menu {
 }
 header .auth ul {
   display: flex;
+  align-items: center;
   gap: 10px;
 
-  & a {
+  & .button {
     padding: 5px 15px;
     font-size: 14px;
     border: 1px solid #fff;
@@ -108,6 +149,7 @@ header .auth ul {
     color: #fff;
     font-weight: 500;
     transition: .25s;
+    cursor: pointer;
 
     &.high-light {
       border-color: transparent;
@@ -118,6 +160,16 @@ header .auth ul {
       background: #fff;
       color: #1a3a5c;
     }
+  }
+}
+
+@keyframes kill-focus {
+  from {
+    display: none;
+  }
+
+  to {
+    display: block;
   }
 }
 
@@ -191,4 +243,141 @@ footer {
   display: flex;
   align-items: center;
   gap: 25px;
+}
+
+.login-popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000026;
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  & .login-popup {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 25px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 2px 5px #00000026;
+  }
+
+  .popup-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    border-bottom: 1px solid #dfdfdf;
+
+    & .button {
+      font-size: 14px;
+      color: #a4a4a4;
+      cursor: pointer;
+    }
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+  }
+
+  & .group {
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  input {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #dfdfdf;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #dfdfdf;
+  }
+}
+
+#login-popup:checked ~ .login-popup-background {
+  display: flex;
+}
+
+.first-popup-background {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00000026;
+  z-index: 200;
+  
+  & .first-popup {
+    animation: first-popup .5s forwards;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 25px 25px 5px 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px #00000026;
+
+    & img {
+      height: 250px;
+    }
+
+    .text-area {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px 25px;
+      border-top: 1px solid #dfdfdf;
+
+      & .desc {
+        font-size: 14px;
+        color: #a4a4a4;
+      }
+    }
+
+    & .button-group {
+      display: flex;
+      justify-content: end;
+      padding: 10px 25px;
+      border-top: 1px solid #dfdfdf;
+      font-size: 14px;
+      color: #a4a4a4;
+
+      & .button {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#first-popup:checked ~ .first-popup-background {
+  display: flex;
+}
+
+@keyframes first-popup {
+  from {
+    opacity: 0;
+    transform: scale(90%) translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+  }
 }
