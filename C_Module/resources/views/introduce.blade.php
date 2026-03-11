@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/introduce.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+<body>
+    <x-layout.header />
+    <main>
+      <div class="intro-banner">
+        <h1>도서관 소개</h1>
+        <small>숙련기술인을 위한 도서관, 스킬스북도서관을 소개합니다.</small>
+      </div>
+      <div class="main inner">
+        <div class="middle-banner">
+          <h2>설립 목적 및 사업 소개</h2>
+          <p>
+            국민에게 산업에 필요한 숙련기술의 습득을 장려하고 숙련기술의<br>
+            향상을 촉진하는 동시에 숙련기술자에 대한 사회적 인식을 높임으로써<br>
+            숙련기술자의 경제적·사회적 지위를 향상시키고 산업경쟁력을 높이는 것을 목적으로 합니다.
+          </p>
+          <div class="icon"><i class="fa fas fa-quote-right"></i></div>
+        </div>
+        <section>
+          <div class="section-title">
+            <div class="small-text">GALLERY</div>
+            <div class="main-text">도서관 갤러리</div>
+          </div>
+          <div class="img-con">
+            <img src="./assets/images/images (2).jpg" alt="">
+            <img src="./assets/images/images (3).jpg" alt="">
+            <img src="./assets/images/images (4).jpg" alt="">
+            <img src="./assets/images/images (5).jpg" alt="">
+            <img src="./assets/images/images (6).jpg" alt="">
+            <img src="./assets/images/images (7).jpg" alt="">
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+        <div class="footer inner">
+            <div class="footer-top">
+                <div class="group-flex">
+                    <a href="/"><div class="logo"><img src="./logo.png" alt=""></div></a>
+                    <div class="group">
+                        <b>스킬스북도서관</b>
+                        <p>인천시 부평구 무네미로 448번길 77 한국산업인력공단 글로벌숙련기술진흥원</p>
+                        <p><b>1644-8000</b> 운영시간(평일) 09:00~18:00</p>
+                    </div>
+                </div>
+                <div class="group sns">
+                    <p>FOLLOW US</p>
+                    <div class="sns">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-github-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>COPYRIGHTⓒ 2016 HRDKOREA</p></div>
+        </div>
+    </footer>
+</body>
+</html>
