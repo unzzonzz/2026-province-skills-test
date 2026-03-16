@@ -1,0 +1,10 @@
+section.visual {width: 100%;}
+.slide-cover {position: relative;width: 100vw;overflow: hidden;}
+.slide-cover {display: flex;width: 300vw;height: 550px;}
+.slide-cover .slide {position: relative;display: flex;justify-content: center;align-items: end;width: 100%;animation: slide 9s infinite;}
+.slide-cover .slide > img {position: absolute;left: 0;bottom: 0;width: 100%;height: 100%;object-fit: cover;}
+.slide-cover .slide > .text-area {display: flex;flex-direction: column;gap: 15px;width: 1200px;padding: 50px 0;z-index: 100;}
+.slide-cover .category {padding: 5px 15px;background: #e8a020;width: fit-content;border-radius: 5px;color: #fff;font-weight: 500;font-size: 14px;}
+.slide-cover .content-1 {font-size: 32px;color: #fff;font-family: serif;font-weight: 700;}
+.slide-cover .content-2 {font-size: 15px;color: #ffffffc1;}
+.slide-cover .slide::before {content: "";display: block;position: absolute;bottom: 0;left: 0;z-index: 100;width: 100%;height: 50%;background: linear-gradient(to top, #00000098, transparent);}
