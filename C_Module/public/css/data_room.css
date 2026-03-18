@@ -1,0 +1,25 @@
+section {
+    padding: 50px 0;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dfdfdf;
+    height: fit-content;
+
+    & img {
+        width: 100%;
+        aspect-ratio: 1;
+        background: #dfdfdf;
+    }
+}

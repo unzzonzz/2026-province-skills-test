@@ -38,7 +38,7 @@
                     <div class="main-text">지도</div>
                 </div>
                 <div class="map">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 500 700" width="1000" height="1000">
                         <defs>
                             <style type="text/css">
                                 .land
