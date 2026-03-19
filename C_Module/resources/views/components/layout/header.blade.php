@@ -67,8 +67,8 @@
                   <input type="text" class="focus-input">
                   <a href="#">도서자료실 <div class="icon"></div></a>
                   <ul class="menu-active">
-                      <li><a href="#">자료실</a></li>
-                      <li><a href="#">열람실예약</a></li>
+                      <li><a href="data-room">자료실</a></li>
+                      <li><a href="reading-room">열람실예약</a></li>
                   </ul>
               </li>
               <li>

@@ -1,8 +1,9 @@
 section {
-  padding: 25px 0;
+  gap: 0 !important;
+  padding: 50px 0;
 }
 
-.map, .map g {
-  width: 611.92px;
-  height: 628.55px;
+.map {
+  display: flex;
+  justify-content: center;
 }
