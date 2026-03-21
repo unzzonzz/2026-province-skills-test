@@ -18,6 +18,38 @@
                     <span class="text-2">마이페이지</span>
                 </div>
             </section>
+            <section class="rental-books">
+                <div class="section-title">
+                    <span class="text-1">RENTAL BOOKS</span>
+                    <span class="text-2">대출도서목록</span>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>도서사진</th>
+                            <th>도서명</th>
+                            <th>저자명</th>
+                            <th>대출일자</th>
+                            <th>반납일</th>
+                            <th>남은기간</th>
+                            <th>반납 버튼</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($rentals as $rental)
+                        <tr>
+                            <td><img src="{{ $rental->image }}" alt="도서 표지"></td>
+                            <td>{{ $rental->book->name }}</td>
+                            <td>{{ $rental->book->author }}</td>
+                            <td>{{ $rental->created_at->format('Y-m-d') }}</td>
+                            <td>{{ $rental->updated_at->addDays(10)->format('Y-m-d') }}</td>
+                            <td>{{ (int) now()->startOfDay()->diffInDays($rental->updated_at->addDays(10)->startOfDay()) }}일</td>
+                            <td><form action="book/{{ $rental->book_id }}/return" method="POST">@csrf <button>반납하기</button></form></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </section>
             <section class="reading-room">
                 <div class="section-title">
                     <span class="text-1">READING ROOM</span>

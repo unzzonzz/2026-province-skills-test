@@ -25,11 +25,11 @@
                             <div class="name">{{ $book->name }}</div>
                             <div class="author">{{ $book->author }}</div>
                             <div class="price">{{ number_format($book->price) }}원</div>
-                            <div class="publication-date">발행년도: {{ $book->publication_date }}</div>
-                            <div class="rent-able">{{ $book->is_rented ? '대출 중' : '대출 가능' }} ({{ Carbon\Carbon::now()->addDays(10)->format('Y-m-d') }}까지)</div>
-                            <form action="data_room/{{ $book->id }}/rent" method="POST">
+                            <div class="publication-date">발행년도: {{ $book->publication_date }}년</div>
+                            <div class="rent-able">{{ $book->is_rented ? '대출 중' : '대출 가능' }} ({{  $book->is_rented ? $book->updated_at->addDays(10)->format('Y-m-d') . '에 반납 예정' : now()->addDays(10)->format('Y-m-d') . '까지' }})</div>
+                            <form action="book/{{ $book->id }}/rent" method="POST">
                                 @csrf
-                                <button>대출하기</button>
+                                <button {{ $book->is_rented ? 'disabled' : '' }}>대출하기</button>
                             </form>
                         </div>
                     </div>

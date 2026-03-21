@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->string('author');
-            $table->date('publication_date');
+            $table->string('publication_date');
             $table->integer('price');
             $table->boolean('is_rented')->default(0);
             $table->timestamps();

@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rents', function (Blueprint $table) {
+        Schema::create('rentals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id');
             $table->foreignId('user_id');
-            $table->boolean('is_returned');
-            $table->date('return_date');
+            $table->boolean('is_returned')->default(0);
             $table->timestamps();
         });
     }

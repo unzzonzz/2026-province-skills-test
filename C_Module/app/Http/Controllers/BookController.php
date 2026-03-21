@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
-use App\Models\Rent;
+use App\Models\Rental;
 
 class BookController extends Controller
 {
@@ -15,7 +15,7 @@ class BookController extends Controller
     }
 
     public function rent($id) {
-        Rent::create([
+        Rental::create([
             'user_id' => auth()->id(),
             'book_id' => $id
         ]);
