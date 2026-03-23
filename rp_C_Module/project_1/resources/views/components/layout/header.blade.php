@@ -40,14 +40,14 @@
 </div>
 <header>
     <div class="header-inner">
-        <div class="logo"><a href="/"><img src="./logo.png" alt="로고"></a></div>
+        <div class="logo"><a href="/"><img src="/logo.png" alt="로고"></a></div>
         <nav class="main">
             <ul>
                 <li>
                     <input type="text">
                     <a href="#">도서관소개 <div class="icon"><div class="bar-1"></div><div class="bar-2"></div></div></a>
                     <ul>
-                        <li><a href="introduce">도서관소개</a></li>
+                        <li><a href="/introduce">도서관소개</a></li>
                         <li><a href="#">도서관현황</a></li>
                     </ul>
                 </li>
@@ -55,29 +55,32 @@
                     <input type="text">
                     <a href="#">도서자료실 <div class="icon"><div class="bar-1"></div><div class="bar-2"></div></div></a>
                     <ul>
-                        <li><a href="data_room">자료실</a></li>
-                        <li><a href="reading_room">열람실예약</a></li>
+                        <li><a href="/data_room">자료실</a></li>
+                        <li><a href="/reading_room">열람실예약</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="@auth small @endauth">
                     <input type="text">
                     <a href="#">회원서비스 <div class="icon"><div class="bar-1"></div><div class="bar-2"></div></div></a>
                     <ul>
-                        <li><a href="#">회원가입</a></li>
-                        <li><a href="mypage">마이페이지</a></li>
+                        @guest<li><a href="#">회원가입</a></li>@endguest
+                        <li><a href="/mypage">마이페이지</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">도서검색</a>
                 </li>
-                <li>
+                @if(auth()->check() && auth()->user()->username === 'admin')
+                <li class="admin">
                     <input type="text">
                     <a href="#">도서관리자 <div class="icon"><div class="bar-1"></div><div class="bar-2"></div></div></a>
                     <ul>
-                        <li><a href="#">신규도서등록</a></li>
-                        <li><a href="#">대출/열람실 업무조회</a></li>
+                        <li><a href="/register_book">신규도서등록</a></li>
+                        <li><a href="/check_reservation">대출/열람실 업무조회</a></li>
+                        <li><a href="/popup_management">팝업관리</a></li>
                     </ul>
                 </li>
+                @endif
             </ul>
         </nav>
         <nav class="auth">

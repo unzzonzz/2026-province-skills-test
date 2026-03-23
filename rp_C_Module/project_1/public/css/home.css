@@ -10,6 +10,14 @@
   from {transform: translateY(50px) scale(90%);opacity: 0;}
 }
 
+.admin-popup .content {width: 500px;background: #fff;box-shadow: 0 2px 5px #00000026;border-radius: 10px 10px 5px 5px;overflow: hidden;animation: first-popup .5s forwards;}
+.admin-popup img {width: 100%;vertical-align: middle;}
+.admin-popup .text-area {display: flex;flex-direction: column;gap: 10px;padding: 10px 25px;border-top: 1px solid #00000026;}
+.admin-popup .text-area .text-1 {font-size: 18px;font-family: serif;font-weight: bold;color: #1a3a5c;}
+.admin-popup .text-area .text-2 {font-size: 14px;color: #00000098;}
+.admin-popup .popup-bottom {display: flex;justify-content: end;padding: 10px 25px;font-size: 14px;color: #00000098;border-top: 1px solid #00000026;}
+.admin-popup .popup-bottom .close {cursor: pointer;}
+
 section.visual {position: relative;width: 100%;overflow: hidden;}
 .slide-cover {display: flex;width: 300%;height: 550px;}
 .slide-cover .slide {position: relative;display: flex;justify-content: center;align-items: end;width: 100%;animation: slide 9s infinite;}

@@ -35,4 +35,19 @@ class BookController extends Controller
 
         return back();
     }
+
+    public function register(Request $request) {
+        $image = $request->file('image')->store('books/images', 'public');
+
+        Book::create([
+            'name' => $request->name,
+            'author' => $request->author,
+            'publisher' => $request->publisher,
+            'image' => $image,
+            'publication_date' => $request->publication_date,
+            'price' => $request->price,
+        ]);
+
+        return back();
+    }
 }

@@ -48,4 +48,10 @@ class ReservationController extends Controller
 
         return back();
     }
+
+    public function delete($id) {
+        Reservation::destroy($id);
+
+        return back();
+    }
 }

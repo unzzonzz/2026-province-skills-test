@@ -1,11 +1,14 @@
+@if(!auth()->check() || auth()->user()->username != 'admin')
+<script>location.href = "/"</script>
+@endif
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" placeholder="viewport">
     <title>스킬스북도서관</title>
     <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/data_room.css">
+    <link rel="stylesheet" href="./css/register_book.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
 <body>
@@ -14,27 +17,19 @@
         <div class="main-inner">
             <section class="data-room">
                 <div class="section-title">
-                    <span class="text-1">DATA ROOM</span>
-                    <span class="text-2">자료실</span>
+                    <span class="text-1">REGISTER BOOK</span>
+                    <span class="text-2">신규도서등록</span>
                 </div>
-                <div class="books">
-                    @foreach($books as $book)
-                    <div class="book">
-                        <img src="{{ asset('storage/' . $book->image) }}" alt="책 표지">
-                        <div class="text-area">
-                            <div class="name">{{ $book->name }}</div>
-                            <div class="author">{{ $book->author }}</div>
-                            <div class="price">{{ number_format($book->price) }}원</div>
-                            <div class="publication-date">발행년도: {{ $book->publication_date }}년</div>
-                            <div class="rent-able">{{ $book->is_rented ? '대출 중' : '대출 가능' }} ({{  $book->is_rented ? $book->updated_at->addDays(10)->format('Y-m-d') . '에 반납 예정' : now()->addDays(10)->format('Y-m-d') . '까지' }})</div>
-                            <form action="book/{{ $book->id }}/rent" method="POST">
-                                @csrf
-                                <button {{ $book->is_rented ? 'disabled' : '' }}>대출하기</button>
-                            </form>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
+                <form action="book/register" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="text" name="name" placeholder="name">
+                    <input type="text" name="author" placeholder="author">
+                    <input type="text" name="publisher" placeholder="publisher">
+                    <input type="file" accept=".jpg, .jpeg, .png" name="image" placeholder="image">
+                    <input type="text" name="publication_date" placeholder="publication_date">
+                    <input type="number" name="price" placeholder="price">
+                    <button>등록</button>
+                </form>
             </section>
         </div>
     </main>

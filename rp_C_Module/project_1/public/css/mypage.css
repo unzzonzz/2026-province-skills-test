@@ -1,4 +1,6 @@
 table {width: 100%;border-collapse: collapse;}
+table img {width: 100px;aspect-ratio: 1;}
 th {border-bottom: 2px solid #00000026;padding: 10px 0;text-align: left;font-size: 14px;}
 td {padding: 10px 0;font-size: 14px;}
 tr {border-bottom: 1px solid #00000026;}
+button {padding: 2.5px 5px;border: 1px solid #00000026;cursor: pointer;border-radius: 5px;}

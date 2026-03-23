@@ -1,6 +1,6 @@
 .books {display: grid;grid-template-columns: repeat(4, 1fr);gap: 10px;}
 .book {width: 100%;height: fit-content;padding: 10px;border: 1px solid #00000026;border-radius: 10px;background: #fff;}
-.book img {aspect-ratio: 1;margin-bottom: 10px;}
+.book img {width: 100%;aspect-ratio: 1;margin-bottom: 10px;object-fit: cover;}
 .book .text-area {display: flex;flex-direction: column;gap: 5px;}
 .book .name {font-weight: bold;}
 .book .author {font-size: 14px;}

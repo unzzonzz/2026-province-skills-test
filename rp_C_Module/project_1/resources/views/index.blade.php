@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
+    @foreach($popups as $popup)
+    <div class="popup-overlay admin-popup">
+        <div class="content">
+            <img src="{{ asset('storage/' . $popup->image) }}" alt="팝업 이미지">
+            <div class="text-area">
+                <div class="text-1">{{ $popup->title }}</div>
+                <div class="text-2">{!! nl2br($popup->content) !!}</div>
+            </div>
+            <div class="popup-bottom"><div class="close">닫기</div></div>
+        </div>
+    </div>
+    @endforeach
     <input type="checkbox" id="firstPopup" hidden checked>
     <div class="popup-overlay first-popup" hidden>
         <div class="content">
@@ -584,5 +596,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        const popups = document.querySelectorAll('.admin-popup')
+
+        popups.forEach(popup => {
+            popup.style.display = 'flex'
+            popup.querySelector('.close').onclick = () => popup.remove()
+        })
+    </script>
 </body>
 </html>

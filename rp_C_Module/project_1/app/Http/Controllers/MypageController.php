@@ -20,4 +20,11 @@ class MypageController extends Controller
         
         return view('mypage', compact('rentals', 'reservations'));
     }
+
+    public function admin() {
+        $rentals = Rental::all();
+        $reservations = Reservation::all();
+
+        return view('check_reservation', compact('rentals', 'reservations'));
+    }
 }

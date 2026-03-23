@@ -12,10 +12,10 @@
     <x-layout.header />
     <main>
         <div class="main-inner">
-            <section class="mypage">
+            <section class="check-reservation">
                 <div class="section-title">
-                    <span class="text-1">MY PAGE</span>
-                    <span class="text-2">마이페이지</span>
+                    <span class="text-1">CHECK RESERVATION</span>
+                    <span class="text-2">대출/열람실 업무조회</span>
                 </div>
             </section>
             <section class="rental-books">
@@ -28,10 +28,12 @@
                         <tr>
                             <th>도서사진</th>
                             <th>도서명</th>
+                            <th>출판사</th>
                             <th>저자명</th>
                             <th>대출일자</th>
                             <th>반납일</th>
                             <th>남은기간</th>
+                            <th>대출자 아이디</th>
                             <th>반납 버튼</th>
                         </tr>
                     </thead>
@@ -40,11 +42,13 @@
                         <tr>
                             <td><img src="{{ asset('storage/' . $rental->book->image) }}" alt="도서 표지"></td>
                             <td>{{ $rental->book->name }}</td>
+                            <td>{{ $rental->book->publisher }}</td>
                             <td>{{ $rental->book->author }}</td>
                             <td>{{ $rental->created_at->format('Y-m-d') }}</td>
                             <td>{{ $rental->updated_at->addDays(10)->format('Y-m-d') }}</td>
                             <td>{{ (int) now()->startOfDay()->diffInDays($rental->updated_at->addDays(10)->startOfDay()) }}일</td>
-                            <td><form action="book/{{ $rental->book_id }}/return" method="POST">@csrf <button>반납하기</button></form></td>
+                            <td>{{ $rental->user->id }}</td>
+                            <td><form action="book/{{ $rental->book_id }}/return" method="POST">@csrf <button {{ (int) now()->startOfDay()->diffInDays($rental->updated_at->addDays(10)->startOfDay()) < 0 ? '' : 'disabled' }}>반납하기</button></form></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -63,6 +67,7 @@
                             <th>시작시간</th>
                             <th>종료시간</th>
                             <th>예약자 아이디</th>
+                            <th>취소</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,6 +78,7 @@
                             <td>{{ $reservation->start_time }}</td>
                             <td>{{ $reservation->end_time }}</td>
                             <td>{{ $reservation->user_id }}</td>
+                            <td><form action="reservation/{{ $reservation->id }}" method="POST">@csrf @method('DELETE') <button>취소</button></form></td>
                         </tr>
                         @endforeach
                     </tbody>
