@@ -20,7 +20,7 @@
                 <div class="books">
                     @foreach($books as $book)
                     <div class="book">
-                        <img src="{{ asset('storage/' . $book->image) }}" alt="책 표지">
+                        <img src="./assets/추천도서/추천도서7.jpg" alt="책 표지">
                         <div class="text-area">
                             <div class="name">{{ $book->name }}</div>
                             <div class="author">{{ $book->author }}</div>

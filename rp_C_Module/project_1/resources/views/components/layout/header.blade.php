@@ -48,7 +48,7 @@
                     <a href="#">도서관소개 <div class="icon"><div class="bar-1"></div><div class="bar-2"></div></div></a>
                     <ul>
                         <li><a href="/introduce">도서관소개</a></li>
-                        <li><a href="#">도서관현황</a></li>
+                        <li><a href="/library_status">도서관현황</a></li>
                     </ul>
                 </li>
                 <li>
@@ -63,7 +63,7 @@
                     <input type="text">
                     <a href="#">회원서비스 <div class="icon"><div class="bar-1"></div><div class="bar-2"></div></div></a>
                     <ul>
-                        @guest<li><a href="#">회원가입</a></li>@endguest
+                        @guest<li><label for="register">회원가입</label></a></li>@endguest
                         <li><a href="/mypage">마이페이지</a></li>
                     </ul>
                 </li>

@@ -1,0 +1,9 @@
+.map-container {display: flex;justify-content: center;}
+.tooltip {position: fixed;white-space: pre;padding: 10px;border-radius: 5px;background: #00000099;color: #fff;font-size: 12px;line-height: 1.5;display: none;}
+.tooltip.visible {display: block;}
+.controls {display: flex;gap: 10px;margin-top: 25px;}
+input, select {padding: 5px 10px;border: 1px solid #dfdfdf;border-radius: 5px;}
+.table-section {margin-top: 25px;max-height: 400px;overflow-y: auto;}
+table {border-collapse: collapse;background: #fff;font-size: 14px;width: 100%;}
+th {white-space: nowrap;}
+th, td {padding: 5px 10px;border: 1px solid #dfdfdf;}

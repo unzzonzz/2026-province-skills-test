@@ -8,12 +8,13 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\PopupController;
 
 Route::get('/', function () {
-    $popups = App\Models\Popup::all();
+    $popups = App\Models\Popup::where('end_date', '>=', now()->format('Y-m-d'))->get();
 
     return view('index', compact('popups'));
 });
 Route::view('introduce', 'introduce');
 Route::view('register_book', 'register_book');
+Route::view('library_status', 'library_status');
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');

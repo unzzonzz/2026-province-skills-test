@@ -16,6 +16,7 @@
             <div class="text-area">
                 <div class="text-1">{{ $popup->title }}</div>
                 <div class="text-2">{!! nl2br($popup->content) !!}</div>
+                <div class="text-2">{{ $popup->start_date }} ~ {{ $popup->end_date }}</div>
             </div>
             <div class="popup-bottom"><div class="close">닫기</div></div>
         </div>
@@ -496,62 +497,63 @@
             <section class="recommand">
                 <input type="radio" name="pagination" id="page1" hidden checked>
                 <input type="radio" name="pagination" id="page2" hidden>
+                <input type="radio" name="pagination" id="page3" hidden>
+                <input type="radio" name="pagination" id="page4" hidden>
+                <input type="radio" name="pagination" id="page5" hidden>
+                <input type="radio" name="pagination" id="page6" hidden>
+                <input type="radio" name="pagination" id="page7" hidden>
                 <div class="section-title">
                     <span class="text-1">RECOMMANDED BOOK</span>
                     <span class="text-2">추천도서</span>
                 </div>
                 <div class="books">
-                    <div class="group-3">
-                        <div class="book">
-                            <img src="./assets/추천도서/추천도서1.jpg" alt="">
-                            <div class="text-area">
-                                <span class="text-1">나에게 나다움을 주기로 했다 : 나다움을 찾아가는 다섯 가지 마음 습관</span>
-                                <span class="text-2">지은이 : 고정욱</span>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <img src="./assets/추천도서/추천도서2.jpg" alt="">
-                            <div class="text-area">
-                                <span class="text-1">여름이 반짝</span>
-                                <span class="text-2">지은이 : 김수빈 </span>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <img src="./assets/추천도서/추천도서3.jpg" alt="">
-                            <div class="text-area">
-                                <span class="text-1">사랑 한 꼬집을 넣으면</span>
-                                <span class="text-2">지은이 : 배리 팀스</span>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <img src="./assets/추천도서/추천도서4.jpg" alt="">
-                            <div class="text-area">
-                                <span class="text-1">정말 정말 소리 지르고 싶어!</span>
-                                <span class="text-2">지은이 : 사이먼 필립</span>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <img src="./assets/추천도서/추천도서5.jpg" alt="">
-                            <div class="text-area">
-                                <span class="text-1">힐빌리의 노래 : 위기의 가정과 문화에 대한 회고</span>
-                                <span class="text-2">지은이 : J.D 밴스</span>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <img src="./assets/추천도서/추천도서6.jpg" alt="">
-                            <div class="text-area">
-                                <span class="text-1">(허영만의) 커피 한잔 할까요?</span>
-                                <span class="text-2">지은이 : 허영만</span>
-                            </div>
+                    <div class="book">
+                        <img src="./assets/추천도서/추천도서1.jpg" alt="">
+                        <div class="text-area">
+                            <span class="text-1">나에게 나다움을 주기로 했다 : 나다움을 찾아가는 다섯 가지 마음 습관</span>
+                            <span class="text-2">지은이 : 고정욱</span>
                         </div>
                     </div>
-                    <div class="group-3">
-                        <div class="book">
-                            <img src="./assets/추천도서/추천도서7.jpg" alt="">
-                            <div class="text-area">
-                                <span class="text-1">두더지의 여름: 김상근 그림책</span>
-                                <span class="text-2">지은이 : 김상근</span>
-                            </div>
+                    <div class="book">
+                        <img src="./assets/추천도서/추천도서2.jpg" alt="">
+                        <div class="text-area">
+                            <span class="text-1">여름이 반짝</span>
+                            <span class="text-2">지은이 : 김수빈 </span>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="./assets/추천도서/추천도서3.jpg" alt="">
+                        <div class="text-area">
+                            <span class="text-1">사랑 한 꼬집을 넣으면</span>
+                            <span class="text-2">지은이 : 배리 팀스</span>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="./assets/추천도서/추천도서4.jpg" alt="">
+                        <div class="text-area">
+                            <span class="text-1">정말 정말 소리 지르고 싶어!</span>
+                            <span class="text-2">지은이 : 사이먼 필립</span>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="./assets/추천도서/추천도서5.jpg" alt="">
+                        <div class="text-area">
+                            <span class="text-1">힐빌리의 노래 : 위기의 가정과 문화에 대한 회고</span>
+                            <span class="text-2">지은이 : J.D 밴스</span>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="./assets/추천도서/추천도서6.jpg" alt="">
+                        <div class="text-area">
+                            <span class="text-1">(허영만의) 커피 한잔 할까요?</span>
+                            <span class="text-2">지은이 : 허영만</span>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="./assets/추천도서/추천도서7.jpg" alt="">
+                        <div class="text-area">
+                            <span class="text-1">두더지의 여름: 김상근 그림책</span>
+                            <span class="text-2">지은이 : 김상근</span>
                         </div>
                     </div>
                 </div>
@@ -559,13 +561,38 @@
                     <div class="group-2">
                         <div class="pagination page-1">
                             <label for=""><div class="button">←</div></label>
-                            <div class="content-1"><span class="text-1">1</span>&nbsp;/ 2</div>
+                            <div class="content-1"><span class="text-1">1</span>&nbsp;/ 7</div>
                             <label for="page2"><div class="button">→</div></label>
                         </div>
                         <div class="pagination page-2">
                             <label for="page1"><div class="button">←</div></label>
-                            <div class="content-1"><span class="text-1">2</span>&nbsp;/ 2</div>
-                            <label for=""><div class="button">→</div></label>
+                            <div class="content-1"><span class="text-1">2</span>&nbsp;/ 7</div>
+                            <label for="page3"><div class="button">→</div></label>
+                        </div>
+                        <div class="pagination page-3">
+                            <label for="page2"><div class="button">←</div></label>
+                            <div class="content-1"><span class="text-1">3</span>&nbsp;/ 7</div>
+                            <label for="page4"><div class="button">→</div></label>
+                        </div>
+                        <div class="pagination page-4">
+                            <label for="page3"><div class="button">←</div></label>
+                            <div class="content-1"><span class="text-1">4</span>&nbsp;/ 7</div>
+                            <label for="page5"><div class="button">→</div></label>
+                        </div>
+                        <div class="pagination page-5">
+                            <label for="page4"><div class="button">←</div></label>
+                            <div class="content-1"><span class="text-1">5</span>&nbsp;/ 7</div>
+                            <label for="page6"><div class="button">→</div></label>
+                        </div>
+                        <div class="pagination page-6">
+                            <label for="page5"><div class="button">←</div></label>
+                            <div class="content-1"><span class="text-1">6</span>&nbsp;/ 7</div>
+                            <label for="page7"><div class="button">→</div></label>
+                        </div>
+                        <div class="pagination page-7">
+                            <label for="page6"><div class="button">←</div></label>
+                            <div class="content-1"><span class="text-1">7</span>&nbsp;/ 7</div>
+                            <label for="page1"><div class="button">→</div></label>
                         </div>
                         <div class="page-disabled"></div>
                     </div>

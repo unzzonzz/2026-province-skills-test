@@ -80,8 +80,8 @@ section.program .popup-overlay .content .popup-content img {width: 100%;height: 
 #program8:checked ~ .program-8 {display: flex;}
 section.program .programs {display: grid;grid-template-columns: repeat(4, 1fr);gap: 10px;}
 section.program .programs .program {position: relative;width: 100%;height: 100%;cursor: pointer;transition: .25s;border: 1px solid #00000026;overflow: hidden;}
-section.program .programs:hover .program {transform: scale(90%);opacity: 0.66;}
-section.program .programs .program:hover {transform: scale(110%);opacity: 1;}
+section.program .programs:hover .program {transform: scale(95%);opacity: 0.66;}
+section.program .programs .program:hover {transform: scale(105%);opacity: 1;}
 section.program .programs .program img {width: 100%;height: 100%;object-fit: cover;}
 section.program .programs .program .content-1 {display: flex;flex-direction: column;align-items: center;gap: 15px;position: absolute;bottom: 0;width: 100%;padding: 15px 25px;background: #fff;border-top: 1px solid #00000026;transform: translateY(100%);transition: .25s;}
 section.program .programs .program:hover .content-1 {transform: translateY(0);}
@@ -104,7 +104,7 @@ section.schedule .group-1 select {padding: 5px 10px;border: 1px solid #00000026;
 .calendar .cell:nth-child(7n + 6) .day {color: #1a3a5c;}
 .calendar .cell:nth-child(7n) .day {color: red;}
 
-section.recommand {overflow: hidden;}
+/* section.recommand {overflow: hidden;} */
 section.recommand .group-1 {display: flex;justify-content: center;align-items: center;gap: 25px;width: 100%;margin-top: 25px;}
 section.recommand .group-1 .group-2 {position: relative;display: flex;}
 section.recommand .group-1 .group-2 .pagination {display: flex;align-items: center;gap: 15px;display: none;}
@@ -113,23 +113,57 @@ section.recommand .pagination .content-1 {font-size: 14px;color: #1a3a5c;}
 section.recommand .pagination .content-1 .text-1 {font-weight: bold;}
 #page1:checked ~ .group-1 .page-1 {display: flex;}
 #page2:checked ~ .group-1 .page-2 {display: flex;}
+#page3:checked ~ .group-1 .page-3 {display: flex;}
+#page4:checked ~ .group-1 .page-4 {display: flex;}
+#page5:checked ~ .group-1 .page-5 {display: flex;}
+#page6:checked ~ .group-1 .page-6 {display: flex;}
+#page7:checked ~ .group-1 .page-7 {display: flex;}
 #page1:checked ~ .books {transform: translate();}
-#page2:checked ~ .books {transform: translate(-1200px);}
-section.recommand .books {display: flex;transition: .5s;}
-section.recommand .books .group-3 {display: grid;grid-template-columns: repeat(6, 1fr);align-items: end;gap: 10px;min-width: 1200px;}
-section.recommand .book {position: relative;width: 100%;height: fit-content;border: 1px solid #00000026;border-radius: 10px 10px 10px 0;overflow: hidden;}
-section.recommand .book img {width: 100%;vertical-align: middle;}
-section.recommand .book .text-area {position: absolute;bottom: 0;display: flex;flex-direction: column;gap: 5px;padding: 10px;background: #fff;width: 100%;border-top: 1px solid #00000026;}
-section.recommand .book .text-area .text-1 {font-size: 15px;}
+#page2:checked ~ .books {transform: translate(-825px);}
+#page3:checked ~ .books {transform: translate(calc(-825px * 2));}
+#page4:checked ~ .books {transform: translate(calc(-825px * 3));}
+#page5:checked ~ .books {transform: translate(calc(-825px * 4));}
+#page6:checked ~ .books {transform: translate(calc(-825px * 5));}
+#page7:checked ~ .books {transform: translate(calc(-825px * 6));}
+section.recommand .books {display: flex;gap: 25px;transition: .5s;}
+section.recommand .book {position: relative;display: flex;gap: 25px;min-width: 800px;height: fit-content;border: 1px solid #00000026;border-radius: 10px;overflow: hidden;background: #fff;}
+section.recommand .book img {height: 250px;vertical-align: middle;}
+section.recommand .book .text-area {bottom: 0;display: flex;flex-direction: column;justify-content: center;gap: 10px;width: 100%;}
+section.recommand .book .text-area .text-1 {font-size: 18px;}
 section.recommand .book .text-area .text-2 {font-size: 14px;color: #00000098;}
 section.recommand .page-disabled {position: absolute;left: 0;display: block;width: 100%;height: 100%;pointer-events: none;}
 #page1:checked ~ .group-1 .page-disabled {animation: prevent-click-1 .5s step-end forwards;}
 #page2:checked ~ .group-1 .page-disabled {animation: prevent-click-2 .5s step-end forwards;}
+#page3:checked ~ .group-1 .page-disabled {animation: prevent-click-3 .5s step-end forwards;}
+#page4:checked ~ .group-1 .page-disabled {animation: prevent-click-4 .5s step-end forwards;}
+#page5:checked ~ .group-1 .page-disabled {animation: prevent-click-5 .5s step-end forwards;}
+#page6:checked ~ .group-1 .page-disabled {animation: prevent-click-6 .5s step-end forwards;}
+#page7:checked ~ .group-1 .page-disabled {animation: prevent-click-7 .5s step-end forwards;}
 @keyframes prevent-click-1 {
   from {pointer-events: auto;}
   to {pointer-events: none;}
 }
 @keyframes prevent-click-2 {
+  from {pointer-events: auto;}
+  to {pointer-events: none;}
+}
+@keyframes prevent-click-3 {
+  from {pointer-events: auto;}
+  to {pointer-events: none;}
+}
+@keyframes prevent-click-4 {
+  from {pointer-events: auto;}
+  to {pointer-events: none;}
+}
+@keyframes prevent-click-5 {
+  from {pointer-events: auto;}
+  to {pointer-events: none;}
+}
+@keyframes prevent-click-6 {
+  from {pointer-events: auto;}
+  to {pointer-events: none;}
+}
+@keyframes prevent-click-7 {
   from {pointer-events: auto;}
   to {pointer-events: none;}
 }
